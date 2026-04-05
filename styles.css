@@ -281,6 +281,20 @@ body {
     pointer-events: none;
 }
 
+/* Large prominent button - for primary CTAs like Live Demo */
+.btn-large {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-large:hover:not(.btn-disabled) {
+    box-shadow: var(--shadow-xl);
+}
+
 .btn-link {
     color: var(--primary-color);
     text-decoration: none;
@@ -385,6 +399,20 @@ section {
     margin-bottom: var(--spacing-md);
 }
 
+.project-badge-live {
+    background: var(--success-color);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.85;
+    }
+}
+
 .featured-card h3 {
     font-family: var(--font-heading);
     font-size: var(--font-size-3xl);
@@ -405,6 +433,19 @@ section {
     margin-bottom: var(--spacing-md);
 }
 
+/* Concise 3-sentence project description */
+.project-description-concise {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-base);
+}
+
+.project-description-concise strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -412,6 +453,12 @@ section {
     margin-bottom: var(--spacing-lg);
 }
 
+    align-items: center;
+}
+
+.project-links .btn-large {
+    flex: 1 1 auto;
+    min-width: 250px;
 .tech-tag {
     background: var(--bg-accent);
     color: var(--primary-color);
@@ -494,6 +541,10 @@ section {
     justify-content: space-between;
     align-items: center;
     margin-bottom: var(--spacing-md);
+}
+
+.project-badge-live-small {
+    background: var(--success-color);
 }
 
 .project-icon {
