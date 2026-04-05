@@ -453,12 +453,6 @@ section {
     margin-bottom: var(--spacing-lg);
 }
 
-    align-items: center;
-}
-
-.project-links .btn-large {
-    flex: 1 1 auto;
-    min-width: 250px;
 .tech-tag {
     background: var(--bg-accent);
     color: var(--primary-color);
@@ -472,6 +466,12 @@ section {
     display: flex;
     gap: var(--spacing-md);
     flex-wrap: wrap;
+    align-items: center;
+}
+
+.project-links .btn-large {
+    flex: 1 1 auto;
+    min-width: 250px;
 }
 
 .featured-card-visual {
