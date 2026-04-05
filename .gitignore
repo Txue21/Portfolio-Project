@@ -9,6 +9,7 @@ desktop.ini
 *.swp
 *.swo
 *~
+VERIFICATION_REPORT.md
 
 # Logs
 *.log
