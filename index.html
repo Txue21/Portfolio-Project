@@ -7,24 +7,33 @@
     <meta property="og:title" content="Tian Xue | Full Stack Developer">
     <meta property="og:description" content="Full Stack Developer specializing in modern web applications">
     <meta property="og:type" content="website">
+    <meta name="theme-color" content="#6366f1">
     <title>Tian Xue | Full Stack Developer</title>
     
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
+    <!-- Preconnect to external resources for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- Google Fonts - optimized loading with display=swap -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome - deferred loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Critical CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Skip to Main Content Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
-            <a href="#home" class="logo">TX</a>
-            <ul class="nav-links">
+            <a href="#home" class="logo" aria-label="Tian Xue - Home">TX</a>
+            <ul class="nav-links" role="list">
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -32,10 +41,12 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero" aria-label="Introduction">
+            <div class="container">
+                <div class="hero-content">
                 <h1 class="hero-title fade-in">Tian Xue</h1>
                 <p class="hero-subtitle fade-in">Full Stack Developer</p>
                 <p class="hero-description fade-in">Building modern web applications with clean code and user-focused design</p>
@@ -45,66 +56,65 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <a href="#featured-project">
-                <i class="fas fa-chevron-down"></i>
+        <div class="scroll-indicator" aria-hidden="true">
+            <a href="#featured-project" aria-label="Scroll down to featured project">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
             </a>
         </div>
-    </section>
+        </section>
 
-    <!-- Featured Project Section -->
-    <section id="featured-project" class="featured-project">
-        <div class="container">
-            <div class="section-header">
-                <h2>Featured Project</h2>
+        <!-- Featured Project Section -->
+        <section id="featured-project" class="featured-project" aria-labelledby="featured-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="featured-heading">Featured Project</h2>
             </div>
-            <div class="featured-card">
+            <article class="featured-card" role="article" aria-label="Featured project: Battleship Game">
                 <div class="featured-card-content">
-                    <div class="project-badge project-badge-live">✨ LIVE NOW</div>
-                    <h3>Vibe Hunter</h3>
+                    <div class="project-badge project-badge-live" role="status" aria-label="Project status: Live">✨ LIVE NOW</div>
+                    <h3>Battleship Game</h3>
                     <p class="project-description-concise">
-                        <strong>What:</strong> Matches users with songs based on their current mood using an intuitive discovery interface.<br>
-                        <strong>Why:</strong> Solves the problem of finding new music when you know the vibe you want but not specific songs.<br>
-                        <strong>How:</strong> Full-stack collaborative build with real-time filtering and mood-based recommendation logic.
+                        <strong>What:</strong> Classic Battleship game with interactive drag-and-drop ship placement and strategic gameplay.<br>
+                        <strong>Why:</strong> Demonstrates game development skills, DOM manipulation, and complex state management in vanilla JavaScript.<br>
+                        <strong>How:</strong> Solo project with real-time hit detection, intuitive UI controls, and clean game logic architecture.
                     </p>
                     <div class="tech-stack">
-                        <span class="tech-tag">Frontend</span>
-                        <span class="tech-tag">Backend</span>
                         <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Team Project</span>
+                        <span class="tech-tag">Game Development</span>
+                        <span class="tech-tag">DOM Manipulation</span>
+                        <span class="tech-tag">Solo Project</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://vibe-hunter.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
-                            <i class="fas fa-external-link-alt"></i> VIEW LIVE DEMO
+                        <a href="https://vibe-hunter.com/battleship/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large" aria-label="View live demo of Battleship Game (opens in new tab)">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> VIEW LIVE DEMO
                         </a>
-                        <a href="https://github.com/Txue21/Final-Project-Vibe-Hunter" target="_blank" class="btn btn-secondary">
-                            <i class="fab fa-github"></i> View on GitHub
+                        <a href="https://github.com/Txue21" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="View Battleship code on GitHub (opens in new tab)">
+                            <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
                         </a>
                     </div>
                 </div>
-                <div class="featured-card-visual">
+                <div class="featured-card-visual" aria-hidden="true">
                     <div class="project-placeholder">
-                        <i class="fas fa-music"></i>
-                        <p>Preview Coming Soon</p>
+                        <i class="fas fa-ship" aria-hidden="true"></i>
                     </div>
                 </div>
-            </div>
+            </article>
         </div>
     </section>
 
-    <!-- Projects Grid Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2>All Projects</h2>
+        <!-- Projects Grid Section -->
+        <section id="projects" class="projects" aria-labelledby="projects-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="projects-heading">All Projects</h2>
                 <p>A showcase of my work and continuous learning</p>
             </div>
-            <div class="projects-grid">
+            <div class="projects-grid" role="list">
                 <!-- Project 1: Vibe Hunter -->
-                <div class="project-card">
+                <article class="project-card" role="listitem">
                     <div class="project-card-header">
-                        <i class="fas fa-music project-icon"></i>
-                        <div class="project-badge-small project-badge-live-small">LIVE</div>
+                        <i class="fas fa-music project-icon" aria-hidden="true"></i>
+                        <div class="project-badge-small project-badge-live-small" role="status" aria-label="Status: Live">LIVE</div>
                     </div>
                     <h3>Vibe Hunter</h3>
                     <p class="project-summary">
@@ -118,20 +128,20 @@
                         <span class="tech-tag-small">Backend</span>
                     </div>
                     <div class="project-card-footer">
-                        <a href="https://vibe-hunter.com" target="_blank" rel="noopener noreferrer" class="btn-link" style="font-weight: 700;">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        <a href="https://vibe-hunter.com" target="_blank" rel="noopener noreferrer" class="btn-link" style="font-weight: 700;" aria-label="View Vibe Hunter live demo (opens in new tab)">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
                         </a>
-                        <a href="https://github.com/Txue21/Final-Project-Vibe-Hunter" target="_blank" class="btn-link">
-                            <i class="fab fa-github"></i> View Code
+                        <a href="https://github.com/Txue21/Final-Project-Vibe-Hunter" target="_blank" rel="noopener noreferrer" class="btn-link" aria-label="View Vibe Hunter code on GitHub (opens in new tab)">
+                            <i class="fab fa-github" aria-hidden="true"></i> View Code
                         </a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 2: Game Vault -->
-                <div class="project-card">
+                <article class="project-card" role="listitem">
                     <div class="project-card-header">
-                        <i class="fas fa-gamepad project-icon"></i>
-                        <div class="project-badge-small">In Development</div>
+                        <i class="fas fa-gamepad project-icon" aria-hidden="true"></i>
+                        <div class="project-badge-small" role="status" aria-label="Status: In Development">In Development</div>
                     </div>
                     <h3>Game Vault</h3>
                     <p class="project-summary">
@@ -145,42 +155,47 @@
                         <span class="tech-tag-small">Solo Project</span>
                     </div>
                     <div class="project-card-footer">
-                        <a href="https://github.com/Txue21/Solo-Project-3-Production-Collection-Manager" target="_blank" class="btn-link">
-                            <i class="fab fa-github"></i> View Code
+                        <a href="https://github.com/Txue21/Solo-Project-3-Production-Collection-Manager" target="_blank" rel="noopener noreferrer" class="btn-link" aria-label="View Game Vault code on GitHub (opens in new tab)">
+                            <i class="fab fa-github" aria-hidden="true"></i> View Code
                         </a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Project 3: Future Project (Placeholder) -->
-                <div class="project-card project-card-placeholder">
+                <!-- Project 3: Battleship Game -->
+                <article class="project-card" role="listitem">
                     <div class="project-card-header">
-                        <i class="fas fa-rocket project-icon"></i>
-                        <div class="project-badge-small">Coming Soon</div>
+                        <i class="fas fa-ship project-icon" aria-hidden="true"></i>
+                        <div class="project-badge-small project-badge-live-small" role="status" aria-label="Status: Live">LIVE</div>
                     </div>
-                    <h3>More Projects Coming</h3>
+                    <h3>Battleship Game</h3>
                     <p class="project-summary">
-                        Continuously building and learning. 
-                        This space is reserved for future projects as I expand my portfolio. 
-                        Stay tuned for exciting new work!
+                        Classic Battleship game with interactive gameplay and strategic ship placement. 
+                        Features intuitive drag-and-drop controls, real-time hit detection, and clean game logic. 
+                        Solo project demonstrating game development and DOM manipulation skills.
                     </p>
                     <div class="tech-stack">
-                        <span class="tech-tag-small">TBD</span>
+                        <span class="tech-tag-small">JavaScript</span>
+                        <span class="tech-tag-small">Game Dev</span>
+                        <span class="tech-tag-small">Solo Project</span>
                     </div>
                     <div class="project-card-footer">
-                        <span class="btn-link disabled">
-                            <i class="fas fa-ellipsis-h"></i> Planning
-                        </span>
+                        <a href="https://vibe-hunter.com/battleship/" target="_blank" rel="noopener noreferrer" class="btn-link" style="font-weight: 700;" aria-label="Play Battleship game live (opens in new tab)">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/Txue21" target="_blank" rel="noopener noreferrer" class="btn-link" aria-label="View Battleship code on GitHub (opens in new tab)">
+                            <i class="fab fa-github" aria-hidden="true"></i> View Code
+                        </a>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>About Me</h2>
+        <!-- About Section -->
+        <section id="about" class="about" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="about-heading">About Me</h2>
             </div>
             <div class="about-content">
                 <div class="about-text">
@@ -191,7 +206,7 @@
                         My approach combines clean, maintainable code with a focus on user-centered design. I enjoy working on both collaborative team projects and solo ventures, always seeking to learn new technologies and improve my craft.
                     </p>
                     <p>
-                        Currently working on Vibe Hunter, a collaborative music discovery application, and developing Game Vault as a solo project to showcase my individual technical capabilities.
+                        My recent work includes Vibe Hunter, a collaborative music discovery application, and Battleship, a solo game development project. Currently developing Game Vault as a full-stack database management application.
                     </p>
                 </div>
                 <div class="skills">
@@ -227,45 +242,47 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
+        <!-- Contact Section -->
+        <section id="contact" class="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="contact-heading">Get In Touch</h2>
                 <p>Let's connect and build something great together</p>
             </div>
             <div class="contact-content">
                 <div class="contact-links">
-                    <a href="https://github.com/Txue21" target="_blank" class="contact-card">
-                        <i class="fab fa-github"></i>
+                    <a href="https://github.com/Txue21" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="Visit my GitHub profile (opens in new tab)">
+                        <i class="fab fa-github" aria-hidden="true"></i>
                         <h3>GitHub</h3>
                         <p>@Txue21</p>
                     </a>
-                    <a href="https://www.linkedin.com/in/xue-tian-24b2172a5/" target="_blank" class="contact-card">
-                        <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/xue-tian-24b2172a5/" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="Connect with me on LinkedIn (opens in new tab)">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
                         <h3>LinkedIn</h3>
                         <p>Connect with me</p>
                     </a>
-                    <a href="mailto:21txalibis@gmail.com" class="contact-card">
-                        <i class="fas fa-envelope"></i>
+                    <a href="mailto:21txalibis@gmail.com" class="contact-card" aria-label="Send me an email">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <h3>Email</h3>
                         <p>21txalibis@gmail.com</p>
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <p>&copy; 2026 Tian Xue. Built with passion and continuous learning.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Optimized script loading -->
+    <script src="script.js" defer></script>
 </body>
 </html>

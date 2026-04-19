@@ -13,6 +13,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 top: offsetTop,
                 behavior: 'smooth'
             });
+            
+            // Focus the target for accessibility
+            target.setAttribute('tabindex', '-1');
+            target.focus();
+            target.addEventListener('blur', () => target.removeAttribute('tabindex'), { once: true });
         }
     });
 });
@@ -98,6 +103,65 @@ updateFooterYear();
 document.querySelectorAll('.btn-disabled, .btn-link.disabled').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
+    });
+});
+
+// ===================================
+// Keyboard Navigation Enhancements
+// ===================================
+
+// Enhanced keyboard navigation for project cards
+document.querySelectorAll('.project-card, .featured-card').forEach(card => {
+    // Make cards keyboard accessible
+    card.setAttribute('tabindex', '0');
+    
+    // Allow Enter key to trigger first link in card
+    card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && e.target === card) {
+            const firstLink = card.querySelector('a');
+            if (firstLink) {
+                firstLink.click();
+            }
+        }
+    });
+});
+
+// ESC key to close/unfocus elements
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        // Remove focus from currently focused element
+        if (document.activeElement) {
+            document.activeElement.blur();
+        }
+    }
+});
+
+// Announce route changes to screen readers
+const announcePageChange = (message) => {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('role', 'status');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.className = 'sr-only';
+    announcement.textContent = message;
+    document.body.appendChild(announcement);
+    
+    // Remove after announcement
+    setTimeout(() => {
+        document.body.removeChild(announcement);
+    }, 1000);
+};
+
+// Announce section changes when navigating
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function() {
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            const sectionName = targetSection.querySelector('h2')?.textContent || 
+                               targetSection.getAttribute('aria-label') || 
+                               'Section';
+            announcePageChange(`Navigated to ${sectionName}`);
+        }
     });
 });
 
